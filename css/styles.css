@@ -1,9 +1,11 @@
+
+/* Custom properties */
 :root {
     --fontNormal: 'Outfit', sans-serif;
-    --white: hsl(0, 0%, 100%);
-    --lightgray: hsl(212, 45%, 89%);
-    --grayishblue: hsl(220, 15%, 55%);
-    --darkblue: hsl(218, 44%, 22%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-light-gray: hsl(212, 45%, 89%);
+    --color-grayish-blue: hsl(220, 15%, 55%);
+    --color-dark-blue: hsl(218, 44%, 22%);
 }
 
 html {
@@ -19,9 +21,11 @@ body {
     font-size: 1.5rem;
 }
 body {
-    background-color: var(--lightgray);
+    background-color: var(--color-light-gray);
 }
 /* Utility */
+
+/* Utility classes are set to avoid code duplication when expanding the website */
 .no-margin {
     margin: 0;
 }
@@ -36,14 +40,18 @@ body {
     display: flex;
     width: min(90%, 120rem);
     margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    padding-top: 7rem;
+    flex-direction: column; /* Change the direction to column to align vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Set the height to 100% of the viewport */
+
 }
 .card {
-    background-color: var(--white);
+    background-color: var(--color-white);
     width: 28rem;
-    height: 43rem;
+    /* height: 43rem; */
+    max-width: 90%; /* Change 'width' to 'max-width' to make the card responsive */
+    height: auto; /* Change 'height' to 'auto' to adjust the height to content */
     border-radius: 19px 19px;
 }
 
@@ -53,20 +61,20 @@ body {
     border-radius: 19px 19px;
 }
 .card__text {
+    font-family: var(--fontNormal);
     margin-top: -2rem;
+    padding: 0 3rem;
 }
 .card__text--header {
-    font-family: var(--fontNormal);
     font-weight: 700;
     font-size: 1.8rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    /* padding-left: 3rem;
+    padding-right: 3rem; */
 }
 .card__text--description {
-    font-family: var(--fontNormal);
+    color: var(--color-grayish-blue);
     font-weight: 400;
     font-size: 1.5rem;
-    color: var(--grayishblue);
-    padding-left: 3rem;
-    padding-right: 3rem;
+    /* padding-left: 3rem;
+    padding-right: 3rem; */
 }
